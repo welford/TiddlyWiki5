@@ -125,7 +125,7 @@ Widget.prototype.substituteVariableParameters = function(text,formalParams,actua
 			// If we've still not got a value, use the default, if any
 			paramValue = paramValue || paramInfo["default"] || "";
 			// Replace any instances of this parameter
-			text = text.replace(new RegExp("\\$" + $tw.utils.escapeRegExp(paramInfo.name) + "\\$","mg"),paramValue);
+			text = $tw.utils.replaceString(text,new RegExp("\\$" + $tw.utils.escapeRegExp(paramInfo.name) + "\\$","mg"),paramValue);
 		}
 	}
 	return text;
@@ -493,8 +493,11 @@ Widget.prototype.invokeActions = function(triggeringWidget,event) {
 	for(var t=0; t<this.children.length; t++) {
 		var child = this.children[t];
 		// Invoke the child if it is an action widget
-		if(child.invokeAction && child.invokeAction(triggeringWidget,event)) {
-			handled = true;
+		if(child.invokeAction) {
+			child.refreshSelf();
+			if(child.invokeAction(triggeringWidget,event)) {
+				handled = true;
+			}
 		}
 		// Propagate through through the child if it permits it
 		if(child.allowActionPropagation() && child.invokeActions(triggeringWidget,event)) {
@@ -504,6 +507,23 @@ Widget.prototype.invokeActions = function(triggeringWidget,event) {
 	return handled;
 };
 
+/*
+Invoke the action widgets defined in a string
+*/
+Widget.prototype.invokeActionString = function(actions,triggeringWidget,event) {
+	actions = actions || "";
+	var parser = this.wiki.parseText("text/vnd.tiddlywiki",actions,{
+			parentWidget: this,
+			document: this.document
+		}),
+		widgetNode = this.wiki.makeWidget(parser,{
+			parentWidget: this,
+			document: this.document
+		});
+	var container = this.document.createElement("div");
+	widgetNode.render(container,null);
+	return widgetNode.invokeActions(this,event);
+};
 
 Widget.prototype.allowActionPropagation = function() {
 	return true;
