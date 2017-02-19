@@ -75,15 +75,22 @@ Plugins/Reinstall/Caption: 重新安装
 Plugins/Themes/Caption: 布景主题
 Plugins/Themes/Hint: 布景主题插件
 Parsing/Caption: 解析
-Parsing/Hint: 在此您可以全域禁用个别的维基语法解析规则。请小心，禁用某些解析规则，会妨碍 ~TiddlyWiki 正常运作 (您可以用[[安全模式|http://tiddlywiki.com/#SafeMode]]恢复正常操作)
+Parsing/Hint: 在此您可以全域禁用或启用维基解析规则。要使更改生效，请保存并重新加载您的维基。禁用某些解析规则，会妨碍 <$text text="TiddlyWiki"/> 正常运作。可使用[[安全模式|http://tiddlywiki.com/#SafeMode]]恢复正常操作。
 Parsing/Block/Caption: 区块解析规则
 Parsing/Inline/Caption: 内联解析规则
 Parsing/Pragma/Caption: 编译指示解析规则
 Saving/Caption: 保存
-Saving/Heading: 保存
+Saving/DownloadSaver/AutoSave/Description: 允许下载保存模块的自动保存
+Saving/DownloadSaver/AutoSave/Hint: 启用下载保存模块的自动保存
+Saving/DownloadSaver/Caption: 下载保存模块
+Saving/DownloadSaver/Hint: 这些设置适用于兼容 HTML5 的下载保存模块
+Saving/General/Caption: 通用
+Saving/General/Hint: 这些设置适用于所有已载入的保存模块
+Saving/Hint: 用于通过保存模块将整个 TiddlyWiki 保存为单个文件的设置
 Saving/TiddlySpot/Advanced/Heading: 高级设置
 Saving/TiddlySpot/BackupDir: 备份文件夹
 Saving/TiddlySpot/Backups: 备份
+Saving/TiddlySpot/Caption: ~TiddlySpot 保存模块
 Saving/TiddlySpot/Description: 这些设置只适用于保存到 http://tiddlyspot.com 或兼容的远程服务器时。
 Saving/TiddlySpot/Filename: 上传文件名
 Saving/TiddlySpot/Heading: ~TiddlySpot
@@ -95,16 +102,20 @@ Saving/TiddlySpot/UserName: 用户
 Settings/AutoSave/Caption: 自动保存
 Settings/AutoSave/Disabled/Description: 不要自动保存变更
 Settings/AutoSave/Enabled/Description: 自动保存变更
-Settings/AutoSave/Hint: 在编辑过程中自动保存变更
+Settings/AutoSave/Hint: 当使用支持的保存模块时，在编辑期间尝试自动保存变更
 Settings/CamelCase/Caption: 驼峰式维基链接
 Settings/CamelCase/Hint: 您可以全域禁用驼峰式短语自动链接。须保存后重新加载，方才生效。
 Settings/CamelCase/Description: 启用自动驼峰式链接
 Settings/Caption: 设置
+Settings/DefaultSidebarTab/Caption: 默认侧边栏页签
+Settings/DefaultSidebarTab/Hint: 指定默认显示的侧边栏页签
 Settings/EditorToolbar/Caption: 编辑器工具栏
 Settings/EditorToolbar/Hint: 启用或禁用编辑器工具栏︰
 Settings/EditorToolbar/Description: 显示编辑器工具栏
-Settings/DefaultSidebarTab/Caption: 默认侧边栏页签
-Settings/DefaultSidebarTab/Hint: 指定默认显示的侧边栏页签
+Settings/InfoPanelMode/Caption: 条目信息面板模式
+Settings/InfoPanelMode/Hint: 控制条目信息面板何时关闭︰
+Settings/InfoPanelMode/Popup/Description: 条目信息面板自动关闭
+Settings/InfoPanelMode/Sticky/Description: 条目信息面板保持打开状态，直到明确关闭
 Settings/Hint: 这些高级设置让您定制 TiddlyWiki 的行为。
 Settings/LinkToBehaviour/Caption: 条目开启行为
 Settings/LinkToBehaviour/InsideRiver/Hint: 从故事河//中//导航
