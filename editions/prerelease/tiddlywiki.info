@@ -13,7 +13,9 @@
 		"tiddlywiki/markdown",
 		"tiddlywiki/qrcode",
 		"tiddlywiki/bibtex",
-		"tiddlywiki/savetrail"
+		"tiddlywiki/savetrail",
+		"tiddlywiki/twitter",
+		"tiddlywiki/mobiledragdrop"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",
